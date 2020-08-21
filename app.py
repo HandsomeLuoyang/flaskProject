@@ -7,8 +7,9 @@ from sqlalchemy import and_, extract
 import re
 import traceback
 import datetime
-from camera import VideoCamera
+from camera import *
 import os
+import threading
 
 app = Flask(__name__)
 login_manager = LoginManager()
@@ -21,6 +22,9 @@ login_manager.init_app(app)
 
 login_manager.login_view = 'login'
 
+video_camera = VideoCamera()
+video_camera.start_record()
+
 
 @login_manager.user_loader
 def load_user(userid):
@@ -31,12 +35,14 @@ def load_user(userid):
 def hello_world():
     return 'Hello World!'
 
+
 # 相机推流
-
-
 def gen(camera):
+    # for frame in camera.get_frame():
+    #     yield (b'--frame\r\n'
+    #            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
     while True:
-        frame = camera.get_frame()
+        frame = video_camera.get_frame()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
@@ -44,14 +50,14 @@ def gen(camera):
 # 相机喂流
 @app.route('/video_feed')
 def video_feed():
-    return Response(gen(VideoCamera()),
+    return Response(gen(video_camera),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # 当前实时相机画面
 @app.route('/cur_camera')
 def cur_camera():
-    return render_template('cur_camer.html')
+    return render_template('cur_camera.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
