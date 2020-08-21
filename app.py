@@ -9,7 +9,6 @@ import traceback
 import datetime
 from camera import *
 import os
-import threading
 
 app = Flask(__name__)
 login_manager = LoginManager()
@@ -23,7 +22,7 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 video_camera = VideoCamera()
-video_camera.start_record()
+# video_camera.start_record()
 
 
 @login_manager.user_loader
@@ -32,7 +31,9 @@ def load_user(userid):
 
 
 @app.route('/')
-def hello_world():
+@app.route('/index')
+@login_required
+def index():
     return 'Hello World!'
 
 
@@ -49,6 +50,7 @@ def gen(camera):
 
 # 相机喂流
 @app.route('/video_feed')
+@login_required
 def video_feed():
     return Response(gen(video_camera),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
@@ -56,6 +58,7 @@ def video_feed():
 
 # 当前实时相机画面
 @app.route('/cur_camera')
+@login_required
 def cur_camera():
     return render_template('cur_camera.html')
 
@@ -65,8 +68,8 @@ def login():
     form = LoginForm()
     if request.method == 'POST' and form.validate_on_submit():
         user = db.session.query(UserTable).filter(
-            UserTable.user_id == form.user_id.data).first()
-        if not user or form.password.data != user.user_password:
+            UserTable.user_name == form.user_id.data).first()
+        if not user or not user.verify_password(form.password.data):
             flash('用户名或密码错误')
         else:
             login_user(user)
