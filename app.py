@@ -51,7 +51,10 @@ def asdawqe():
 @admin_required
 @login_required
 def user_list():
-    return render_template('user_list.html')
+    all_user = db.session.query(UserTable).all()
+    for i in all_user:
+        print(i)
+    return render_template('user_list.html', all_user=all_user)
 
 
 @app.route('/add_user', methods=['GET', 'POST'])

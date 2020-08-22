@@ -8,139 +8,40 @@
 
 <div class="card">
                 <div class="card-header">
-                  <h4>Recent Orders</h4>
+                  <h4>职工列表</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-striped">
-                      <tbody><tr>
-                        <th style="width:35%;">Cust Name</th>
-                        <th style="width:35%;">Order No</th>
-                        <th style="width:35%;">Status</th>
-                        <th>Amount</th>
-                        <th>Details</th>
-                      </tr>
+                    <table class="table table-striped ">
+                      <tbody>
                       <tr>
-                        <td>
-                          <div class="media">
-                            <img alt="image" class="mr-3 rounded-circle" width="40" src="assets/img/users/user-1.png">
-                            <div class="media-body">
-                              <div class="media-title">Cara Stevens</div>
-                              <div class="text-job text-muted">Prime Customer</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>CT56743</td>
-                        <td class="align-middle">
-                          <div class="progress-text">30%</div>
-                          <div class="progress" data-height="6" style="height: 6px;">
-                            <div class="progress-bar bg-orange" data-width="30%" style="width: 30%;"></div>
-                          </div>
-                        </td>
-                        <td>$955</td>
-                        <td>
-                          <div class="media-cta">
-                            <a href="#" class="btn btn-outline-primary">Detail</a>
-                          </div>
-                        </td>
+                        <th style="width:15%;">员工姓名</th>
+                          <th style="width:15%;">职位</th>
+                        <th style="width:25%;">联系电话</th>
+                        <th style="width:25%;">出生年月</th>
+                        <th style="width:35%;">身份证号码</th>
                       </tr>
+                      {% for user in all_user %}
                       <tr>
-                        <td>
-                          <div class="media">
-                            <img alt="image" class="mr-3 rounded-circle" width="40" src="assets/img/users/user-2.png">
-                            <div class="media-body">
-                              <div class="media-title">John Doe</div>
-                              <div class="text-job text-muted">Regular Customer</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>OT58743</td>
-                        <td class="align-middle">
-                          <div class="progress-text">50%</div>
-                          <div class="progress" data-height="6" style="height: 6px;">
-                            <div class="progress-bar bg-indigo" data-width="50%" style="width: 50%;"></div>
-                          </div>
-                        </td>
-                        <td>$234</td>
-                        <td>
-                          <div class="media-cta">
-                            <a href="#" class="btn btn-outline-primary">Detail</a>
-                          </div>
-                        </td>
+                            <td>
+                                <div class="media-title">
+                                    {{user.user_name}}
+                                </div>
+                            </td>
+                            <td>
+                                {{user.pow.pow_name}}
+                            </td>
+                            <td>
+                                {{ user.phone_number }}
+                            </td>
+                            <td>
+                                {{ user.birthday }}
+                            </td>
+                            <td>
+                                {{ user.id_card }}
+                            </td>
                       </tr>
-                      <tr>
-                        <td>
-                          <div class="media">
-                            <img alt="image" class="mr-3 rounded-circle" width="40" src="assets/img/users/user-3.png">
-                            <div class="media-body">
-                              <div class="media-title">Sarah Smith</div>
-                              <div class="text-job text-muted">Prime Customer</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>KJ76543</td>
-                        <td class="align-middle">
-                          <div class="progress-text">43%</div>
-                          <div class="progress" data-height="6" style="height: 6px;">
-                            <div class="progress-bar bg-purple" data-width="43%" style="width: 43%;"></div>
-                          </div>
-                        </td>
-                        <td>$2,432</td>
-                        <td>
-                          <div class="media-cta">
-                            <a href="#" class="btn btn-outline-primary">Detail</a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="media">
-                            <img alt="image" class="mr-3 rounded-circle" width="40" src="assets/img/users/user-4.png">
-                            <div class="media-body">
-                              <div class="media-title">Ashton Cox
-                              </div>
-                              <div class="text-job text-muted">Prime Customer</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>FD56743</td>
-                        <td class="align-middle">
-                          <div class="progress-text">65%</div>
-                          <div class="progress" data-height="6" style="height: 6px;">
-                            <div class="progress-bar bg-cyan" data-width="65%" style="width: 65%;"></div>
-                          </div>
-                        </td>
-                        <td>$234</td>
-                        <td>
-                          <div class="media-cta">
-                            <a href="#" class="btn btn-outline-primary">Detail</a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="media">
-                            <img alt="image" class="mr-3 rounded-circle" width="40" src="assets/img/users/user-5.png">
-                            <div class="media-body">
-                              <div class="media-title">Hasan Basri</div>
-                              <div class="text-job text-muted">Regular Customer</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td>XU56743</td>
-                        <td class="align-middle">
-                          <div class="progress-text">39%</div>
-                          <div class="progress" data-height="6" style="height: 6px;">
-                            <div class="progress-bar bg-danger" data-width="39%" style="width: 39%;"></div>
-                          </div>
-                        </td>
-                        <td>$747</td>
-                        <td>
-                          <div class="media-cta">
-                            <a href="#" class="btn btn-outline-primary">Detail</a>
-                          </div>
-                        </td>
-                      </tr>
+                          {% endfor %}
                     </tbody></table>
                   </div>
                 </div>

@@ -12,7 +12,6 @@ def admin_required(f):
     @wraps(f)
     def decorator(*args, **kwargs):
         try:
-            print(current_user.pow.pow_id)
             if not current_user or current_user.pow.pow_id != 1:
                 abort(403)
             return f(*args, **kwargs)
