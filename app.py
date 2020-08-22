@@ -10,7 +10,7 @@ import datetime
 from camera import *
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 login_manager = LoginManager()
 
 app.config.from_object(Config)
@@ -22,7 +22,7 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 video_camera = VideoCamera()
-# video_camera.start_record()
+video_camera.start_record()
 
 
 @login_manager.user_loader
@@ -30,11 +30,66 @@ def load_user(userid):
     return db.session.query(UserTable).get(userid)
 
 
+# jQuery测试
+@app.route('/jquery_test')
+def jquery():
+    # a = request.args.get('a',0,type=int)
+    # b = request.args.get('b',0,type=int)
+    src = 'mp4/love.mp4'
+    return jsonify(src=src)
+    return render_template('jQuery_test.html')
+
+
+# 历史视频查看
+@app.route('/history_video')
+def history_video():
+    date = request.args.get('date', '2020-07-01')
+    src = 'mp4/if_you.mp4'
+    return jsonify(src=src)
+
+
+@app.route('/jquery')
+def asdawqe():
+    admin = UserTable(0, 1,'admin', 'admin', '123123', '2000-01-01', '430528xxxxxx')
+    db.session.add(admin)
+    db.session.commit()
+    return render_template('jQuery_test.html')
+
+# 用户列表
+@app.route('/user_list')
+def user_list():
+    return render_template('user_list.html')
+
+
+@app.route('/add_user')
+def add_user():
+    return render_template('add_user.html')
+
+# 监控列表页面
+@app.route('/monitor')
+def monitor():
+    return render_template("monitor.html")
+
+# 监控详情页面
+@app.route('/monitor_details')
+def monitor_details():
+    return render_template("monitor_details.html")
+
+
+@csrf.exempt
+@app.route('/test', methods=['POST', 'GET'])
+def test():
+
+    # print(request.values['time'])
+
+    return render_template('admin_index.html')
+
+
 @app.route('/')
 @app.route('/index')
 @login_required
 def index():
-    return 'Hello World!'
+    return render_template('admin_index.html')
 
 
 # 相机推流

@@ -1,5 +1,5 @@
 # coding: utf-8
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Date
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
@@ -29,17 +29,23 @@ class UserTable(db.Model, UserMixin):
         index=True)
     user_name = db.Column(db.String(50), nullable=False)
     user_password = db.Column(db.String(18), nullable=False)
+    phone_number = db.Column(db.String(20), nullable=False)
+    birthday = db.Column(db.Date, nullable=False)
+    id_card = db.Column(db.String(18), nullable=False)
 
     pow = db.relationship(
         'UserPowerTable',
         primaryjoin='UserTable.pow_id == UserPowerTable.pow_id',
         backref='user_tables')
 
-    def __init__(self, user_id, pow_id, user_name, user_password):
+    def __init__(self, user_id, pow_id, user_name, user_password, phone_number, birthday, id_card):
         self.user_id = user_id
         self.pow_id = pow_id
         self.user_name = user_name
         self.user_password = generate_password_hash(user_password)
+        self.phone_number = phone_number
+        self.birthday = birthday
+        self.id_card = id_card
 
     def get_id(self):
         return self.user_id

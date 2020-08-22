@@ -5,11 +5,170 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58cb5da8-8d88-4f22-bdc4-51cce4bffd91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/videoCapture2020-8-21/14.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/flaskProject-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/exts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/bundles/gmaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/bundles/jquery.sparkline.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/css/app.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/css/components.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/fonts/nunito-v9-latin-600.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/fonts/nunito-v9-latin-700.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/fonts/nunito-v9-latin-800.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/fonts/nunito-v9-latin-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/image-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/spinner-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/typing.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/img/userbig.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/advance-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/auth-register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/chart-amchart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/chart-apexcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/chart-chartjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/chart-echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/ckeditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/create-post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/form-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/forms-advanced-forms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gallery1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-draggable-marker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-geocoding.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-geolocation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-multiple-marker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/gmaps-simple.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/index2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/ion-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/light-gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/multiple-upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/owl-carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/posts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/toastr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/vector-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/page/widget-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/assets/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/bootstrap-editable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/bootstrap-table.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/analytics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/base.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/bootstrap-editable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/bootstrap-table-editable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/bootstrap-table-zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/bootstrap-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/jquery-2.1.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/jquery.placeholder.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/modernizr-2.6.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/js/project.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/mp4/if_you.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/static/mp4/love.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/add_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/admin_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/cur_camer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/jQuery_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/monitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/monitor_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskProject-master/templates/user_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/history_videos/2020-8-22/10.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/bundles/gmaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/bundles/jquery.sparkline.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/app.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/components.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nunito-v9-latin-600.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nunito-v9-latin-700.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nunito-v9-latin-800.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nunito-v9-latin-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/image-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/spinner-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/typing.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/userbig.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/advance-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/auth-register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/chart-amchart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/chart-apexcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/chart-chartjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/chart-echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/ckeditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/create-post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/form-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/forms-advanced-forms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gallery1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-draggable-marker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-geocoding.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-geolocation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-multiple-marker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/gmaps-simple.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/index2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/ion-icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/light-gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/multiple-upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/owl-carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/posts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/toastr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/vector-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/page/widget-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mp4/if_you.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mp4/love.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cur_camer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/jQuery_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/monitor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/monitor_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flaskProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flaskProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exts.py" beforeDir="false" afterPath="$PROJECT_DIR$/exts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/camera.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoCapture2020-8-21/14.avi" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +290,8 @@
       <workItem from="1597851699744" duration="3212000" />
       <workItem from="1597977230721" duration="121000" />
       <workItem from="1597977354148" duration="1669000" />
-      <workItem from="1597979260495" duration="8972000" />
+      <workItem from="1597979260495" duration="11615000" />
+      <workItem from="1598061269606" duration="2736000" />
     </task>
     <servers />
   </component>
@@ -142,34 +302,34 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597983705565">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598062387152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597983705565" />
-    <state x="702" y="314" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597984110065">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598062387152" />
+    <state x="702" y="314" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598062441731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="702" y="314" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597984110065" />
+    <state x="702" y="314" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598062441731" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1597977350278">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597977350278" />
-    <state width="1875" height="244" key="GridCell.Tab.0.bottom" timestamp="1597992837363">
+    <state width="1875" height="244" key="GridCell.Tab.0.bottom" timestamp="1598064133711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597992837363" />
-    <state width="1875" height="244" key="GridCell.Tab.0.center" timestamp="1597992837363">
+    <state width="1875" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598064133711" />
+    <state width="1875" height="244" key="GridCell.Tab.0.center" timestamp="1598064133711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="244" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597992837363" />
-    <state width="1875" height="244" key="GridCell.Tab.0.left" timestamp="1597992837362">
+    <state width="1875" height="244" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598064133711" />
+    <state width="1875" height="244" key="GridCell.Tab.0.left" timestamp="1598064133711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="244" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597992837362" />
-    <state width="1875" height="244" key="GridCell.Tab.0.right" timestamp="1597992837363">
+    <state width="1875" height="244" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598064133711" />
+    <state width="1875" height="244" key="GridCell.Tab.0.right" timestamp="1598064133711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="244" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597992837363" />
+    <state width="1875" height="244" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598064133711" />
     <state x="661" y="202" key="SettingsEditor" timestamp="1597635660564">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -178,12 +338,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="528" y="173" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597557962443" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597978061630">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598062226345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597978061630" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598062226345" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flaskProject$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1597992837355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flaskProject$flaskProject.coverage" NAME="flaskProject Coverage Results" MODIFIED="1598064133703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

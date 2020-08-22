@@ -23,7 +23,7 @@ def draw_time_label(frame):
 
 
 class VideoCamera():
-    def __init__(self, save_path='./videoCapture'):
+    def __init__(self, save_path='./history_videos/'):
         threading.Thread.__init__(self)
         self.cap = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 10000)

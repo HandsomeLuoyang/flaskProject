@@ -1,0 +1,124 @@
+{% extends 'admin_index.html' %}
+
+{% block css %}
+
+
+
+  <link rel="stylesheet" href="assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+
+
+
+{% endblock %}
+
+{% block main_content %}
+
+
+<h1>jQuery Example</h1>
+<p><input type=text size=5 name=a> +
+   <input type=text size=5 name=b> =
+   <span id=result>?</span>
+<p><a href=# id=calculate>calculate server side</a>
+
+
+
+ <div id="mp4_player">
+ <video  width="320" height="240" controls="controls">
+ </video>
+ </div>
+<button id="b1" > click</button>
+     <button id="b2"> click2</button>
+
+
+ <div id="time_choose">
+ <input type="date" class="form-control" id="date">
+
+     <div id="time_choose_mp4">
+
+           <video  width="320" height="240" controls="controls">
+ </video>
+     </div>
+
+ </div>
+{% endblock %}
+
+{% block JS %}
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('a#calculate').bind('click',function () {
+            $.getJSON('/jquery_test',{
+        a: $('input[name="a"]').val(),
+        b: $('input[name="b"]').val()
+      },function (data) {
+            $("#result").text(data.result);
+            })
+        });
+
+    });
+
+    </script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#b1').click(function () {
+            $('#mp4_player').html('<video id="v1" width="320" height="240" controls="controls">\n' +
+                '<source src="mp4/love.mp4" type="video/mp4"></source>'
+                +' </video>'
+            );
+            $('#v1').show();
+
+        })
+    })
+
+     $(document).ready(function () {
+        $('#b2').click(function () {
+
+
+            $('#mp4_player').html('<video id="v1" width="320" height="240" controls="controls">\n' +
+                '<source src="mp4/if_you.mp4" type="video/mp4"></source>'
+                +' </video>'
+            );
+            $('#v1').show();
+
+        })
+    })
+
+    </script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#date').on('input propertychange', function () {
+            $.getJSON('/jquery_test',{
+                date:$('#date').val()
+            },function (data) {
+                $('#time_choose_mp4').html('<video id="v1" width="320" height="240" controls="controls">\n' +
+                '<source src= '+data.src+' type="video/mp4"></source>'
+                +' </video>');
+                alert(data.src)
+            $('#v1').show();
+            });
+
+        })
+    });
+
+    </script>
+
+      <script src="assets/bundles/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+      <script src="assets/bundles/cleave-js/dist/cleave.min.js"></script>
+  <script src="assets/bundles/cleave-js/dist/addons/cleave-phone.us.js"></script>
+  <script src="assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script src="assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+  <script src="assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+  <script src="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  <script src="assets/bundles/select2/dist/js/select2.full.min.js"></script>
+  <script src="assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+
+
+{% endblock %}

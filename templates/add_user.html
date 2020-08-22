@@ -1,0 +1,105 @@
+{% extends 'admin_index.html' %}
+
+{% block css %}
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/css/app.min.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="assets/bundles/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="assets/bundles/jquery-selectric/selectric.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+{% endblock %}
+
+{% block main_content %}
+
+    <div class="card">
+                  <div class="card-header">
+                    <h4>添加新用户</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>员工姓名</label>
+                      <input type="text" class="form-control" placeholder="姓名">
+                    </div>
+                    <div class="form-group">
+                      <label>联系方式</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="fas fa-phone"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control phone-number">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>登陆密码</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                        </div>
+                        <input type="password" class="form-control pwstrength" data-indicator="pwindicator">
+                      </div>
+                      <div id="pwindicator" class="pwindicator">
+                        <div class="bar"></div>
+                        <div class="label"></div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label>职位</label>
+                      <select class="form-control select2">
+                        <option>安全员</option>
+                        <option>技术员</option>
+                        <option>管理员</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>出生年月</label>
+                      <input type="text" class="form-control datemask" placeholder="2000/01/01">
+                    </div>
+                    <div class="form-group">
+                      <label>身份证号码</label>
+                      <input type="text" class="form-control creditcard">
+                    </div>
+
+    <div class="col-sm-12 col-md-7">
+                        <button class="btn btn-primary">保存提交</button>
+                      </div>
+                  </div>
+
+                </div>
+
+{% endblock %}
+
+{% block JS %}
+  <!-- General JS Scripts -->
+  <script src="assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="assets/bundles/cleave-js/dist/cleave.min.js"></script>
+  <script src="assets/bundles/cleave-js/dist/addons/cleave-phone.us.js"></script>
+  <script src="assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script src="assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+  <script src="assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+  <script src="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  <script src="assets/bundles/select2/dist/js/select2.full.min.js"></script>
+  <script src="assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/forms-advanced-forms.js"></script>
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="assets/js/custom.js"></script>
+{% endblock %}
