@@ -20,34 +20,36 @@
 {% block main_content %}
 
     <div class="card">
+        <form action="add_user" method="post">
+                {{ form.csrf_token }}
                   <div class="card-header">
                     <h4>添加新用户</h4>
                   </div>
                   <div class="card-body">
                     <div class="form-group">
-                      <label>员工姓名</label>
-                      <input type="text" class="form-control" placeholder="姓名">
+                      <label>{{ form.user_name.label }}</label>
+                        {{ form.user_name(class_="form-control") }}
                     </div>
                     <div class="form-group">
-                      <label>联系方式</label>
+                        {{ form.phone.label }}
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
                             <i class="fas fa-phone"></i>
                           </div>
                         </div>
-                        <input type="text" class="form-control phone-number">
+                          {{ form.phone(class_="form-control phone-number") }}
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>登陆密码</label>
+                        {{ form.user_password.label }}
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
                             <i class="fas fa-lock"></i>
                           </div>
                         </div>
-                        <input type="password" class="form-control pwstrength" data-indicator="pwindicator">
+                          {{ form.user_password(class_="form-control pwstrength") }}
                       </div>
                       <div id="pwindicator" class="pwindicator">
                         <div class="bar"></div>
@@ -57,29 +59,26 @@
 
 
                     <div class="form-group">
-                      <label>职位</label>
-                      <select class="form-control select2">
-                        <option>安全员</option>
-                        <option>技术员</option>
-                        <option>管理员</option>
-                      </select>
+                        {{ form.role.label }}
+                        {{ form.role(class_="form-control select2") }}
                     </div>
 
                     <div class="form-group">
-                      <label>出生年月</label>
-                      <input type="text" class="form-control datemask" placeholder="2000/01/01">
+                        {{ form.birthday.label }}
+{#                      <input type="text" class="form-control datemask" placeholder="2000/01/01">#}
+                        {{ form.birthday(class_="form-control datepicker") }}
                     </div>
                     <div class="form-group">
-                      <label>身份证号码</label>
-                      <input type="text" class="form-control creditcard">
+                        {{ form.id_number.label }}
+                        {{ form.id_number(class_="form-control creditcard") }}
                     </div>
 
-    <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary">保存提交</button>
+                         <div class="col-sm-12 col-md-7">
+                        {{ form.submit(class_="btn btn-primary") }}
                       </div>
                   </div>
-
-                </div>
+        </form>
+    </div>
 
 {% endblock %}
 

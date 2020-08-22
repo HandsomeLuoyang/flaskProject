@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, make_response, jsonify, flash, url_for, redirect, Response
 from flask_login import LoginManager, current_user, login_required, login_user, logout_user
+from log import login_log, fire_log
+from role import *
 from model import *
 from exts import db, Config
 from forms import *
@@ -30,18 +32,9 @@ def load_user(userid):
     return db.session.query(UserTable).get(userid)
 
 
-# jQuery测试
-@app.route('/jquery_test')
-def jquery():
-    # a = request.args.get('a',0,type=int)
-    # b = request.args.get('b',0,type=int)
-    src = 'mp4/love.mp4'
-    return jsonify(src=src)
-    return render_template('jQuery_test.html')
-
-
 # 历史视频查看
 @app.route('/history_video')
+@login_required
 def history_video():
     date = request.args.get('date', '2020-07-01')
     src = 'mp4/if_you.mp4'
@@ -50,28 +43,42 @@ def history_video():
 
 @app.route('/jquery')
 def asdawqe():
-    admin = UserTable(0, 1,'admin', 'admin', '123123', '2000-01-01', '430528xxxxxx')
-    db.session.add(admin)
-    db.session.commit()
     return render_template('jQuery_test.html')
+
 
 # 用户列表
 @app.route('/user_list')
+@admin_required
+@login_required
 def user_list():
     return render_template('user_list.html')
 
 
-@app.route('/add_user')
+@app.route('/add_user', methods=['GET', 'POST'])
+@admin_required
+@login_required
 def add_user():
-    return render_template('add_user.html')
+    form = UserForm()
+    if request.method == 'POST':
+        print(form.user_name.data)
+        print(form.role.data)
+        print(form.phone.data)
+        user_item = UserTable(user_id=0, pow_id=form.role.data, user_name=form.user_name.data, user_password=form.user_password.data,
+                              phone_number=''.join(form.phone.data.split(' ')), birthday=form.birthday.data, id_card=form.id_number.data)
+        db.session.add(user_item)
+        db.session.commit()
+
+    return render_template('add_user.html', form=form)
 
 # 监控列表页面
 @app.route('/monitor')
+@login_required
 def monitor():
     return render_template("monitor.html")
 
 # 监控详情页面
 @app.route('/monitor_details')
+@login_required
 def monitor_details():
     return render_template("monitor_details.html")
 
@@ -89,7 +96,17 @@ def test():
 @app.route('/index')
 @login_required
 def index():
-    return render_template('admin_index.html')
+    if current_user.pow.pow_id == 1:
+        return render_template('admin_index.html')
+    else:
+        return render_template('common_index.html')
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 
 # 相机推流
@@ -126,9 +143,14 @@ def login():
             UserTable.user_name == form.user_id.data).first()
         if not user or not user.verify_password(form.password.data):
             flash('用户名或密码错误')
+            login_log.info(
+                '用户名:{} 尝试登录 登录失败！！'.format(
+                    form.user_id.data,
+                    form.password))
         else:
             login_user(user)
             flash('登陆成功')
+            login_log.info('用户名:{} 登录成功！！'.format(form.user_id.data))
             return redirect(url_for('index'))
     return render_template('login.html', form=form)
 
