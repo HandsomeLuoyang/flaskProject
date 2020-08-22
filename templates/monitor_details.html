@@ -1,4 +1,8 @@
-{% extends 'admin_index.html' %}
+{% if current_user.pow.pow_id == 1 %}
+    {% extends 'admin_index.html' %}
+{% else %}
+    {% extends 'common_index.html' %}
+{% endif %}
 
 
 {% block css %}
