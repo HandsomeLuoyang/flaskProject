@@ -1976,7 +1976,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             @returns {Object} validation errors map
             @example
             $('#username, #fullname').editable('validate');
-            // possible result:
+            // possible yolo3_result:
             {
               username: "username is required",
               fullname: "fullname should be minimum 3 letters length"
@@ -1994,7 +1994,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             /**
             Returns current values of editable elements.   
             Note that it returns an **object** with name-value pairs, not a value itself. It allows to get data from several elements.    
-            If value of some editable is `null` or `undefined` it is excluded from result object.
+            If value of some editable is `null` or `undefined` it is excluded from yolo3_result object.
             When param `isSingle` is set to **true** - it is supposed you have single element and will return value of editable instead of object.   
              
             @method getValue()
@@ -2002,14 +2002,14 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             @returns {Object} object of element names and values
             @example
             $('#username, #fullname').editable('getValue');
-            //result:
+            //yolo3_result:
             {
             username: "superuser",
             fullname: "John"
             }
             //isSingle = true
             $('#username').editable('getValue', true);
-            //result "superuser" 
+            //yolo3_result "superuser"
             **/
             case 'getValue':
                 if(arguments.length === 2 && arguments[1] === true) { //isSingle = true
@@ -2670,7 +2670,7 @@ List - abstract class for inputs that have source option loaded from js array or
                         this.sourceData = this.makeArray(data);
                         if($.isArray(this.sourceData)) {
                             if(cache) {
-                                //store result in cache
+                                //store yolo3_result in cache
                                 cache.sourceData = this.sourceData;
                                 //run success callbacks for other fields waiting for this source
                                 $.each(cache.callbacks, function () { this.call(); }); 

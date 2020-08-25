@@ -91,6 +91,9 @@ def monitor_details():
 def test():
 
     # print(request.values['time'])
+    # admin = UserTable()
+    # db.session.add(admin)
+    # db.session.commit()
 
     return render_template('admin_index.html')
 

@@ -2754,7 +2754,7 @@ var Style = /** @class */ (function () {
      *
      * [workaround] for old jQuery
      * passing an array of style properties to .css()
-     * will result in an object of property-value pairs.
+     * will yolo3_result in an object of property-value pairs.
      * (compability with version < 1.9)
      *
      * @private

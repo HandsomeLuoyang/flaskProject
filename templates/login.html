@@ -156,11 +156,11 @@
                 },
                 success: function (data) {
                     if (data.ret == 1) {
-                        $("#result").modal();
+                        $("#yolo3_result").modal();
                         $("#msg").html(data.msg);
                         window.setTimeout("location.href='/user'", 1200);
                     } else {
-                        $("#result").modal();
+                        $("#yolo3_result").modal();
                         $("#msg").html(data.msg);
                         document.getElementById("login").disabled = false;
                     }

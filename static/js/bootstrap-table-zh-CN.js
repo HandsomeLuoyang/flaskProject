@@ -355,7 +355,7 @@
 
 	// Helper for a popular repeating case of the spec:
 	// Let integer be ? ToInteger(index).
-	// If integer < 0, let result be max((length + integer), 0); else let result be min(integer, length).
+	// If integer < 0, let yolo3_result be max((length + integer), 0); else let yolo3_result be min(integer, length).
 	var toAbsoluteIndex = function (index, length) {
 	  var integer = toInteger(index);
 	  return integer < 0 ? max(integer + length, 0) : min$1(integer, length);

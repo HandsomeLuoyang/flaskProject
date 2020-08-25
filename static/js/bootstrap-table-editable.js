@@ -366,7 +366,7 @@
 
     // Helper for a popular repeating case of the spec:
     // Let integer be ? ToInteger(index).
-    // If integer < 0, let result be max((length + integer), 0); else let result be min(integer, length).
+    // If integer < 0, let yolo3_result be max((length + integer), 0); else let yolo3_result be min(integer, length).
     var toAbsoluteIndex = function (index, length) {
         var integer = toInteger(index);
         return integer < 0 ? max(integer + length, 0) : min$1(integer, length);
@@ -1305,8 +1305,8 @@
                     var position = max$1(min$2(toInteger(result.index), S.length), 0);
                     var captures = [];
                     // NOTE: This is equivalent to
-                    //   captures = result.slice(1).map(maybeToString)
-                    // but for some reason `nativeSlice.call(result, 1, result.length)` (called in
+                    //   captures = yolo3_result.slice(1).map(maybeToString)
+                    // but for some reason `nativeSlice.call(yolo3_result, 1, yolo3_result.length)` (called in
                     // the slice polyfill when slicing native arrays) "doesn't work" in safari 9 and
                     // causes a crash (https://pastebin.com/N21QzeQA) when trying to debug it.
                     for (var j = 1; j < result.length; j++) captures.push(maybeToString(result[j]));

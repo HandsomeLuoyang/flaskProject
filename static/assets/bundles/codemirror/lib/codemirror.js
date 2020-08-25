@@ -2981,7 +2981,7 @@ function getDimensions(cm) {
 
 // Computes display.scroller.scrollLeft + display.gutters.offsetWidth,
 // but using getBoundingClientRect to get a sub-pixel-accurate
-// result.
+// yolo3_result.
 function compensateForHScroll(display) {
   return display.scroller.getBoundingClientRect().left - display.sizer.getBoundingClientRect().left
 }
@@ -4242,7 +4242,7 @@ function postUpdateDisplay(cm, update) {
       // Clip forced viewport to actual scrollable area.
       if (viewport && viewport.top != null)
         { viewport = {top: Math.min(cm.doc.height + paddingVert(cm.display) - displayHeight(cm), viewport.top)} }
-      // Updated line heights might result in the drawn area not
+      // Updated line heights might yolo3_result in the drawn area not
       // actually covering the viewport. Keep looping until it does.
       update.visible = visibleLines(cm.display, cm.doc, viewport)
       if (update.visible.from >= cm.display.viewFrom && update.visible.to <= cm.display.viewTo)
@@ -4367,7 +4367,7 @@ function setGuttersForLineNumbers(options) {
 var wheelSamples = 0;
 var wheelPixelsPerUnit = null;
 // Fill in a browser-detected starting value on browsers where we
-// know one. These don't have to be accurate -- the result of them
+// know one. These don't have to be accurate -- the yolo3_result of them
 // being wrong would just be a slight flicker on the first wheel
 // scroll (if it is large enough).
 if (ie) { wheelPixelsPerUnit = -.53 }
@@ -4892,7 +4892,7 @@ function getOldSpans(doc, change) {
 }
 
 // Used for un/re-doing changes from the history. Combines the
-// result of computing the existing spans with the set of spans that
+// yolo3_result of computing the existing spans with the set of spans that
 // existed in the history (so that deleting around a span and then
 // undoing brings back the span).
 function mergeOldSpans(doc, change) {
@@ -5562,7 +5562,7 @@ BranchChunk.prototype = {
         at = 0
       } else { at -= sz }
     }
-    // If the result is smaller than 25 lines, ensure that it is a
+    // If the yolo3_result is smaller than 25 lines, ensure that it is a
     // single leaf node.
     if (this.size - n < 25 &&
         (this.children.length > 1 || !(this.children[0] instanceof LeafChunk))) {

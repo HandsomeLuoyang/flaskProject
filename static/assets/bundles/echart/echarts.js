@@ -7213,7 +7213,7 @@
      * @param  {number} [ellipsis='...']
      * @param  {Object} [options]
      * @param  {number} [options.maxIterations=3]
-     * @param  {number} [options.minChar=0] If truncate result are less
+     * @param  {number} [options.minChar=0] If truncate yolo3_result are less
      *                  then minChar, ellipsis will not show, which is
      *                  better for user hint in some cases.
      * @param  {number} [options.placeholder=''] When all truncated, use the placeholder.
@@ -7251,8 +7251,8 @@
         var ascCharWidth = options.ascCharWidth = getWidth('a', font);
         options.placeholder = retrieve2(options.placeholder, '');
 
-        // Example 1: minChar: 3, text: 'asdfzxcv', truncate result: 'asdf', but not: 'a...'.
-        // Example 2: minChar: 3, text: '维度', truncate result: '维', but not: '...'.
+        // Example 1: minChar: 3, text: 'asdfzxcv', truncate yolo3_result: 'asdf', but not: 'a...'.
+        // Example 2: minChar: 3, text: '维度', truncate yolo3_result: '维', but not: '...'.
         var contentWidth = containerWidth = Math.max(0, containerWidth - 1); // Reserve some gap.
         for (var i = 0; i < minChar && contentWidth >= ascCharWidth; i++) {
             contentWidth -= ascCharWidth;
@@ -7521,7 +7521,7 @@
                         tokenWidth = token.textWidth;
 
                         // FIXME: If image is not loaded and textWidth is not specified, calling
-                        // `getBoundingRect()` will not get correct result.
+                        // `getBoundingRect()` will not get correct yolo3_result.
                         var textBackgroundColor = tokenStyle.textBackgroundColor;
                         var bgImg = textBackgroundColor && textBackgroundColor.image;
 
@@ -8080,7 +8080,7 @@
 
     function onBgImageLoaded(image, textBackgroundColor) {
         // Replace image, so that `contain/text.js#parseRichText`
-        // will get correct result in next tick.
+        // will get correct yolo3_result in next tick.
         textBackgroundColor.image = image;
     }
 
@@ -11218,7 +11218,7 @@
     }
 
     /**
-     * Make id and name for mapping result (result of mappingToExists)
+     * Make id and name for mapping yolo3_result (yolo3_result of mappingToExists)
      * into `keyInfo` field.
      *
      * @public
@@ -11326,7 +11326,7 @@
      *
      * @param {Array.<Object>} batchA Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
      * @param {Array.<Object>} batchB Like: [{seriesId: 2, dataIndex: [32, 4, 5]}, ...]
-     * @return {Array.<Array.<Object>, Array.<Object>>} result: [resultBatchA, resultBatchB]
+     * @return {Array.<Array.<Object>, Array.<Object>>} yolo3_result: [resultBatchA, resultBatchB]
      */
     function compressBatches(batchA, batchB) {
         var mapA = {};
@@ -11454,7 +11454,7 @@
      * @param {Object} [opt]
      * @param {string} [opt.defaultMainType]
      * @param {Array.<string>} [opt.includeMainTypes]
-     * @return {Object} result like:
+     * @return {Object} yolo3_result like:
      *        {
      *            seriesModels: [seriesModel1, seriesModel2],
      *            seriesModel: seriesModel1, // The first model
@@ -13162,7 +13162,7 @@
                 y = cubicAt$$1(y0, y1, y2, y3, t);
 
                 // Use line to approximate dashed bezier
-                // Bad result if dash is long
+                // Bad yolo3_result if dash is long
                 idx % 2 ? ctx.moveTo(x, y)
                     : ctx.lineTo(x, y);
 
@@ -16851,7 +16851,7 @@
      */
     function transformDirection(direction, transform, invert$$1) {
 
-        // Pick a base, ensure that transform result will not be (0, 0).
+        // Pick a base, ensure that transform yolo3_result will not be (0, 0).
         var hBase = (transform[4] === 0 || transform[5] === 0 || transform[0] === 0)
             ? 1 : Math.abs(2 * transform[4] / transform[0]);
         var vBase = (transform[4] === 0 || transform[5] === 0 || transform[2] === 0)
@@ -17866,7 +17866,7 @@
             // Timezoneoffset of Javascript Date has considered DST (Daylight Saving Time,
             // https://tc39.github.io/ecma262/#sec-daylight-saving-time-adjustment).
             // For example, system timezone is set as "Time Zone: America/Toronto",
-            // then these code will get different result:
+            // then these code will get different yolo3_result:
             // `new Date(1478411999999).getTimezoneOffset();  // get 240`
             // `new Date(1478412000000).getTimezoneOffset();  // get 300`
             // So we should not use `new Date`, but use `Date.UTC`.
@@ -18567,7 +18567,7 @@
      * So this method only fixes the last step 'Traslate', which does not affect
      * scaling and rotating.
      *
-     * If be called repeatly with the same input el, the same result will be gotten.
+     * If be called repeatly with the same input el, the same yolo3_result will be gotten.
      *
      * @param {module:zrender/Element} el Should have `getBoundingRect` method.
      * @param {Object} positionInfo
@@ -18630,7 +18630,7 @@
 
         // Because 'tranlate' is the last step in transform
         // (see zrender/core/Transformable#getLocalTransform),
-        // we can just only modify el.position to get final result.
+        // we can just only modify el.position to get final yolo3_result.
         var elPos = el.position;
         var dx = h ? positionInfo.x - rect.x : 0;
         var dy = v ? positionInfo.y - rect.y : 0;
@@ -19147,7 +19147,7 @@
 
         /**
          * @param {string} name MUST NOT be null/undefined. Otherwise call this function
-         *                 twise with the same parameters will get different result.
+         *                 twise with the same parameters will get different yolo3_result.
          * @param {Object} [scope=this]
          * @param {Object} [requestColorNum]
          * @return {string} color string.
@@ -20111,9 +20111,9 @@
      * should be considered:
      *
      * (1) In `merge option` mode, if using the same option to call `setOption`
-     * many times, the result should be the same (try our best to ensure that).
+     * many times, the yolo3_result should be the same (try our best to ensure that).
      * (2) In `merge option` mode, if a component has no id/name specified, it
-     * will be merged by index, and the result sequence of the components is
+     * will be merged by index, and the yolo3_result sequence of the components is
      * consistent to the original sequence.
      * (3) `reset` feature (in toolbox). Find detailed info in comments about
      * `mergeOption` in module:echarts/model/OptionManager.
@@ -20436,17 +20436,17 @@
          * which is convenient for inner usage.
          *
          * @usage
-         * var result = findComponents(
+         * var yolo3_result = findComponents(
          *     {mainType: 'dataZoom', query: {dataZoomId: 'abc'}}
          * );
-         * var result = findComponents(
+         * var yolo3_result = findComponents(
          *     {mainType: 'series', subType: 'pie', query: {seriesName: 'uio'}}
          * );
-         * var result = findComponents(
+         * var yolo3_result = findComponents(
          *     {mainType: 'series'},
          *     function (model, index) {...}
          * );
-         * // result like [component0, componnet1, ...]
+         * // yolo3_result like [component0, componnet1, ...]
          *
          * @param {Object} condition
          * @param {string} condition.mainType Mandatory.
@@ -21345,7 +21345,7 @@
      * Then user press 'reset button' in toolbox.
      *
      * After doing that all of the interaction effects should be reset, the
-     * chart should be the same as the result of invoke
+     * chart should be the same as the yolo3_result of invoke
      * `chart.setOption(opt1); chart.setOption(opt2);`.
      *
      * Although it is not able ensure that
@@ -24346,7 +24346,7 @@
         // on the settings of `dataZoom`), it should be re-performed if the component
         // is modified by `setOption`.
         // (2) If a processor depends on sevral series, speicified by its `getTargetSeries`,
-        // it should be re-performed when the result array of `getTargetSeries` changed.
+        // it should be re-performed when the yolo3_result array of `getTargetSeries` changed.
         // We use `dependencies` to cover these issues.
         // (3) How to update target series when coordinate system related components modified.
 
@@ -24673,7 +24673,7 @@
                 stub = agentStubMap.set(pipelineId, createTask(
                     { reset: stubReset, onDirty: stubOnDirty }
                 ));
-                // When the result of `getTargetSeries` changed, the overallTask
+                // When the yolo3_result of `getTargetSeries` changed, the overallTask
                 // should be set as dirty and re-performed.
                 overallTask.dirty();
             }
@@ -24693,7 +24693,7 @@
         agentStubMap.each(function (stub, pipelineId) {
             if (!pipelineMap.get(pipelineId)) {
                 stub.dispose();
-                // When the result of `getTargetSeries` changed, the overallTask
+                // When the yolo3_result of `getTargetSeries` changed, the overallTask
                 // should be set as dirty and re-performed.
                 overallTask.dirty();
                 agentStubMap.removeKey(pipelineId);
@@ -25643,7 +25643,7 @@
      *            ... (can be extended)
      *        }
      * @param {Array|number} value
-     * @return {Array|number} result
+     * @return {Array|number} yolo3_result
      */
     echartsProto.convertToPixel = curry(doConvertPixel, 'convertToPixel');
 
@@ -25663,7 +25663,7 @@
      *            ... (can be extended)
      *        }
      * @param {Array|number} value
-     * @return {Array|number} result
+     * @return {Array|number} yolo3_result
      */
     echartsProto.convertFromPixel = curry(doConvertPixel, 'convertFromPixel');
 
@@ -25705,7 +25705,7 @@
      *            ... (can be extended)
      *        }
      * @param {Array|number} value
-     * @return {boolean} result
+     * @return {boolean} yolo3_result
      */
     echartsProto.containPixel = function (finder, value) {
         var ecModel = this._model;
@@ -29499,7 +29499,7 @@
 
         var dimCount = getDimCount(source, sysDims, dimsDef, opt.dimCount);
 
-        // Apply user defined dims (`name` and `type`) and init result.
+        // Apply user defined dims (`name` and `type`) and init yolo3_result.
         for (var i = 0; i < dimCount; i++) {
             var dimDefItem = dimsDef[i] = extend(
                 {}, isObject$1(dimsDef[i]) ? dimsDef[i] : { name: dimsDef[i] }
@@ -29640,7 +29640,7 @@
     // on other dimensions besides coordSys needed.
     // So, dims that is not used by system, should be shared in storage?
     function getDimCount(source, sysDims, dimsDef, optDimCount) {
-        // Note that the result dimCount should not small than columns count
+        // Note that the yolo3_result dimCount should not small than columns count
         // of data, otherwise `dataDimNameMap` checking will be incorrect.
         var dimCount = Math.max(
             source.dimensionsDetectCount || 1,
@@ -30606,7 +30606,7 @@
         setInterval: function (interval) {
             this._interval = interval;
             // Dropped auto calculated niceExtent and use user setted extent
-            // We assume user wan't to set both interval, min, max to get a better result
+            // We assume user wan't to set both interval, min, max to get a better yolo3_result
             this._niceExtent = this._extent.slice();
 
             this._intervalPrecision = getIntervalPrecision(interval);
@@ -30971,7 +30971,7 @@
     }
 
     /**
-     * @param {Object} barWidthAndOffset The result of makeColumnLayout
+     * @param {Object} barWidthAndOffset The yolo3_result of makeColumnLayout
      * @param {module:echarts/coord/Axis} axis
      * @param {module:echarts/model/Series} [seriesModel] If not provided, return all.
      * @return {Object} {stackId: {offset, width}} or {offset, width} if seriesModel provided.
@@ -31636,7 +31636,7 @@
         //      + `boundaryGap` is applied (if min/max set, boundaryGap is
         //      disabled).
         //      + If `needCrossZero`, min/max should be zero, otherwise, min/max should
-        //      be the result that originalExtent enlarged by boundaryGap.
+        //      be the yolo3_result that originalExtent enlarged by boundaryGap.
         // (3) If no data, it should be ensured that `scale.setBlank` is set.
 
         // FIXME
@@ -32975,7 +32975,7 @@
     }
 
     // Large category data calculation is performence sensitive, and ticks and label
-    // probably be fetched by multiple times. So we cache the result.
+    // probably be fetched by multiple times. So we cache the yolo3_result.
     // axis is created each time during a ec process, so we do not need to clear cache.
     function getListCache(axis, prop) {
         // Because key can be funciton, and cache size always be small, we use array cache.
@@ -33009,7 +33009,7 @@
 
     /**
      * Calculate interval for category axis ticks and labels.
-     * To get precise result, at least one of `getRotate` and `isHorizontal`
+     * To get precise yolo3_result, at least one of `getRotate` and `isHorizontal`
      * should be implemented in axis.
      */
     function calculateCategoryInterval(axis, hideLabel) {
@@ -33170,7 +33170,7 @@
         return result;
     }
 
-    // When interval is function, the result `false` means ignore the tick.
+    // When interval is function, the yolo3_result `false` means ignore the tick.
     // It is time consuming for large category data.
     function makeLabelsByCustomizedCategoryInterval(axis, categoryInterval, onlyTick) {
         var ordinalScale = axis.scale;
@@ -34563,7 +34563,7 @@
             }
         }
 
-        // Diff result may be crossed if all items are changed
+        // Diff yolo3_result may be crossed if all items are changed
         // Sort by data index
         sortedIndices.sort(function (a, b) {
             return rawIndices[a] - rawIndices[b];
@@ -38321,7 +38321,7 @@
                 var key = makeKey(axis.model);
                 var involveSeries = triggerTooltip || snap || axis.type === 'category';
 
-                // If result.axesInfo[key] exist, override it (tooltip has higher priority).
+                // If yolo3_result.axesInfo[key] exist, override it (tooltip has higher priority).
                 var axisInfo = result.axesInfo[key] = {
                     key: key,
                     axis: axis,
@@ -48935,7 +48935,7 @@
 
         each$1(pieceList, function (piece, index) {
             piece.originIndex = index;
-            // piece.visual is "result visual value" but not
+            // piece.visual is "yolo3_result visual value" but not
             // a visual range, so it does not need to be normalized.
             if (piece.visual != null) {
                 thisOption.hasSpecialVisual = true;
@@ -49589,7 +49589,7 @@
     var treemapLayout = {
         seriesType: 'treemap',
         reset: function (seriesModel, ecModel, api, payload) {
-            // Layout result in each node:
+            // Layout yolo3_result in each node:
             // {x, y, width, height, area, borderWidth}
             var ecWidth = api.getWidth();
             var ecHeight = api.getHeight();
@@ -54484,7 +54484,7 @@
     */
 
     /**
-     * Calculate slider move result.
+     * Calculate slider move yolo3_result.
      * Usage:
      * (1) If both handle0 and handle1 are needed to be moved, set minSpan the same as
      * maxSpan and the same as `Math.abs(handleEnd[1] - handleEnds[0])`.
@@ -68527,7 +68527,7 @@
          *
          * @private
          * @param {Array.<Object>} optionList option list
-         * @param {Array.<Object>} result result of flatten
+         * @param {Array.<Object>} result yolo3_result of flatten
          * @param {Object} parentOption parent option
          */
         _flatten: function (optionList, result, parentOption) {
@@ -70820,7 +70820,7 @@
                 clearTimeout(this._refreshUpdateTimeout);
                 this._refreshUpdateTimeout = setTimeout(function () {
                     // Show tip next tick after other charts are rendered
-                    // In case highlight action has wrong result
+                    // In case highlight action has wrong yolo3_result
                     // FIXME
                     self.manuallyShowTip(tooltipModel, ecModel, api, {
                         x: self._lastX,
@@ -75529,7 +75529,7 @@
             // var second = new Date(1478412000000);
             // var allDays = Math.floor(second / ONE_DAY) - Math.floor(first / ONE_DAY) + 1;
             // ```
-            // will get wrong result because of DST. So we should fix it.
+            // will get wrong yolo3_result because of DST. So we should fix it.
             var date = new Date(range[0].time);
             var startDateNum = date.getDate();
             var endDateNum = range[1].date.getDate();
@@ -77336,7 +77336,7 @@
                 if (this._rangePropMode[index] === 'value') {
                     thisOption[names[0]] = null;
                 }
-                // Otherwise do nothing and use the merge result.
+                // Otherwise do nothing and use the merge yolo3_result.
             }, this);
 
             this.textStyleModel = this.getModel('textStyle');
@@ -85235,7 +85235,7 @@
 
         // FIXME
         // (1) When symbol.style.strokeNoScale is true and updateTransform is not performed,
-        // getBoundingRect will return wrong result.
+        // getBoundingRect will return wrong yolo3_result.
         // (This is supposed to be resolved in zrender, but it is a little difficult to
         // leverage performance and auto updateTransform)
         // (2) All of ancesters of symbol do not scale, so we can just updateTransform symbol.
@@ -87114,7 +87114,7 @@
                             angle += 360;
                         }
 
-                        // Very small angles produce an unexpected result because they are
+                        // Very small angles produce an unexpected yolo3_result because they are
                         // converted to a scientific notation string.
                         if (angle < 1e-6) {
                             angle = 0;

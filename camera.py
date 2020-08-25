@@ -3,9 +3,10 @@ import time
 import threading
 import datetime
 from pathlib import Path
+from yolo3_model import *
 
 
-def draw_time_label(frame):
+def draw_time_label(frame, fps):
     """
     为frame加入时间label
     :param frame:
@@ -17,7 +18,7 @@ def draw_time_label(frame):
     color = (255, 0, 0)
     thickness = 2
 
-    f = cv2.putText(frame, text, (10, 30), font_face,
+    f = cv2.putText(frame, text + '' + fps, (60, 60), font_face,
                     scale, color, thickness, cv2.LINE_AA)
     return f
 
@@ -33,6 +34,7 @@ class VideoCamera():
         self.current_hour = -1
         self.record_thread = None
         self.save_path = save_path
+        self.yolo = YOLO()
         print("CCTV初始化...")
         print("摄像头分辨率", self.frame_width, "x", self.frame_height)
         print("储存路径", self.save_path)
@@ -68,15 +70,18 @@ class VideoCamera():
         :return:
         """
         success, image = self.cap.read()
+        image = Image.fromarray(image)
+        image = self.yolo.detect_image(image)
+        result = np.asarray(image)
         #self.cap.set(3, 320)
         #self.cap.set(4, 240)
 
         if success:
-            image = draw_time_label(image)
+            image = draw_time_label(result, 'FPS:??')
             # We are using Motion JPEG, but OpenCV defaults to capture raw images,
             # so we must encode it into JPEG in order to correctly display the
             # video stream.
-            ret, jpeg = cv2.imencode('.jpg', image)
+            ret, jpeg = cv2.imencode('.jpg', result)
             return jpeg.tobytes()
         else:
             return bytearray()
@@ -89,6 +94,8 @@ class RecordThread(threading.Thread):
         self.cap = cap
         self.frame_width = int(self.cap.get(3))
         self.frame_height = int(self.cap.get(4))
+        self.yolo = YOLO()
+        self.fps = 'FPS: ??'
 
         self.stopped = True
         out = None
@@ -105,10 +112,29 @@ class RecordThread(threading.Thread):
             frame_rate,
             (self.frame_width,
              self.frame_height))
+        accum_time = 0
+        curr_fps = 0
+        prev_time = timer()
 
         while True:
             ret, frame = self.cap.read()
-            frame = draw_time_label(frame)
+            image = Image.fromarray(frame)
+            image = self.yolo.detect_image(image)
+
+
+            result = np.asarray(image)
+            cv2.namedWindow("result", cv2.WINDOW_NORMAL)
+            cv2.imshow("result", result)
+            curr_time = timer()
+            exec_time = curr_time - prev_time
+            prev_time = curr_time
+            accum_time = accum_time + exec_time
+            curr_fps = curr_fps + 1
+            if accum_time > 1:
+                accum_time = accum_time - 1
+                self.fps = "FPS: " + str(curr_fps)
+                curr_fps = 0
+            frame = draw_time_label(frame, self.fps)
             if ret:
                 out.write(frame)
 
@@ -116,6 +142,7 @@ class RecordThread(threading.Thread):
                 # out.release()
                 print("录制停止\n")
                 break
+        self.yolo.close_session()
 
     def stop(self):
         self.stopped = True
